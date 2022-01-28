@@ -1,24 +1,22 @@
-import logo from './logo.svg';
+import React, { useState } from 'react';
 import './App.css';
+import PeopleList from './PeopleList';
+import GlobalState from './context/GlobalState';
+import CreatePerson from './CreatePerson';
+import NotFound from './errorPage';
+import { Route, Routes } from 'react-router-dom';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <GlobalState>
+      <div className='container'>
+      <Routes>
+        <Route exact path='/' element={<PeopleList />} />
+        <Route exact path='/create' element={<CreatePerson />} />
+        <Route path='*'  element={<NotFound />} /> 
+      </Routes>    
+      </div>
+    </GlobalState>
   );
 }
 
