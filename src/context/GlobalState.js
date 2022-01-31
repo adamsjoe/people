@@ -31,7 +31,7 @@ export default class GlobalState extends React.Component {
             <Context.Provider
                 value={{
                     people: this.state.people,
-                    updatedPeople: this.updatePeople,
+                    updatePeople: this.updatePeople,
                 }}
                 >
                     {this.props.children}

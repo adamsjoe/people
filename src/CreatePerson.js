@@ -5,7 +5,7 @@ import context from './context/context';
 const handleSubmit = (e, people, updatePeople) => {
     e.preventDefault()
     const newPerson = {
-        id: e.target.name.value.replace('').toLowerCase(),
+        id: e.target.name.value.replace('', '').toLowerCase(),
         name: e.target.name.value,
         handle: e.target.handle.value
     }
